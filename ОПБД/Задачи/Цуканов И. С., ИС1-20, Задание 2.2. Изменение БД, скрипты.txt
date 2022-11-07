@@ -1,0 +1,68 @@
+1 задача:
+create table "name"(
+"Id" serial primary key,
+"Name" varchar(50),
+"Lname" varchar(50),
+"Address" varchar(100)
+);
+
+2 задача:
+create table "user"(
+"IdUsers" serial primary key,
+"City" varchar(50),
+"Street" varchar(50)
+);
+
+3 задача:
+create table "cust"(
+"CustId" serial primary key,
+"Cust_name" varchar(50) not null,
+"Cust_address" varhcar(50)
+);
+
+
+create table "orders"(
+"order_num" serial primary key,
+"prod_id" int not null
+);
+
+4 задача:
+create table "orderitems"(
+"order_num" serial primary key,
+"oreder_item" varchar(50)
+);
+
+5 задача:
+create table "vendors"(
+"vend_id" serial primary key,
+"vend_name" varchar(50) not null,
+"vend_country" varchar(50)
+);
+
+6 задача:
+alter table "vendors"
+add column "vend_state" varchar(10);
+
+7 задача:
+alter table "vendors"
+alter column "vend_state" set not null;
+
+8 задача:
+alter table "vendors"
+alter column "vend_name" drop not null;
+
+9 задача:
+alter table "orderitems"
+add constraint "fk_order"
+foreign key ("order_num")
+references "orderitems"("order_num");
+
+10 задача:
+alter table "vendors"
+drop column "vend_name";
+
+alter table "vendors"
+alter "vend_state" drop not null;
+
+insert into "vendors"("vend_country")
+values ('France');
